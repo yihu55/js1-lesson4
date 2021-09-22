@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script>
+        /*function myFunction() {
+
+                                                                                                                                          document.getElementById("demo").innerHTML = "Magic 🎩";
+                                                                                                                                         alert("Welcome to the world of HTML and Javascript")
+                                                                                                                                                                                        }*/
+
+
+        function isEmpty() {
+            event.preventDefault()
+
+            const firstName = document.getElementById("firstname").value
+            const lastName = document.getElementById("lastname").value
+            const email = document.getElementById("email").value
+
+
+            if (firstName == "") {
+                document.getElementById("fname-error").innerHTML = "no empty firstname"
+
+
+            }
+            if (lastName == "") {
+                document.getElementById("lname-error").innerHTML = "no empty lastname"
+
+
+            }
+            if (email == "") {
+                document.getElementById("email-error").innerHTML = "no empty email"
+
+            }
+
+            if (firstName !== "" && lastName !== "" && email !== "") {
+
+                //alert("your value accepted")
+                document.getElementById("success-message").innerHTML = "Tack för din ansökan"
+                document.getElementById("email-error").hidden = true
+                document.getElementById("fname-error").hidden = true
+                document.getElementById("lname-error").hidden = true
+
+            }
+
+        }
+    </script>
+</head>
+
+<body>
+    <!--h2>Demo JavaScript in Head</h2>
+
+    <p id="demo">This is a Paragraph Tag with Id demo</p>
+    <button type="button" onclick="myFunction()">Try it</button><br-->
+
+    <h2>Demo form</h2>
+    <form>
+
+        <label for="fname">Firstname:</label><br>
+        <input type="text" id="firstname"><br>
+        <p id="fname-error"></p>
+
+        <label for="lname">Lastname:</label><br>
+        <input type="text" id="lastname"><br>
+        <p id="lname-error"></p>
+
+        <label for="email">Email:</label><br>
+        <input type="text" id="email">
+        <p id="email-error"></p>
+
+        <button type="submit" onclick="isEmpty()">submit</button>
+
+
+    </form>
+
+    <p id="success-message">message</p>
+
+</body>
+
+</html>
+<!--varför: onclick knappen som kopplat till script som gör att sidan att reagerar-->
+<!--!DOCTYPE html>
+
+<head>
+    <title>Extra Uppgift</title>
+
+    <script>
+        function myFunction() {
+            //Stop page from refreshing when Submnit goes through successfully
+            event.preventDefault();
+
+            firstName = document.getElementById("firstName").value;
+            lastName = document.getElementById("lastName").value;
+            email = document.getElementById("email").value;
+
+            //if a field is empty (if input value is null), render the error in a p-tag for each input 
+            //https://www.codegrepper.com/code-examples/javascript/javascript+check+if+input+is+empty
+            if (firstName == 0) {
+                document.getElementById("firstName-error").innerHTML = "First Name cannot be empty";
+            }
+            if (lastName == 0) {
+                document.getElementById("lastName-error").innerHTML = "Last Name cannot be empty";
+            }
+            if (email == 0) {
+                document.getElementById("email-error").innerHTML = "Email cannot be empty";
+            }
+
+            //If Submit is successful (if input value is null), render success message in a p-tag
+            if (firstName.length != 0 && lastName.length != 0 && email.length != 0) {
+
+                document.getElementById("success-message").innerHTML = "Tack för din ansökan.";
+
+                //Hide HTML "error-message" elements if Submit is successful    
+                document.getElementById("firstName-error").style.visibility = 'hidden';
+                document.getElementById("lastName-error").style.visibility = 'hidden';
+                // document.getElementById("lastName-error").remove();
+                document.getElementById("email-error").style.visibility = 'hidden';
+            }
+        }
+    </script>
+
+</head>
+
+<body>
+    <h2>Demo Form</h2>
+
+    <form>
+        <input type="text" id="firstName" placeholder="First Name" required/>
+        <p id="firstName-error"></p>
+
+        <input type="text" id="lastName" placeholder="Last Name" required/>
+        <p id="lastName-error"></p>
+
+        <input type="text" id="email" placeholder="Email" required/>
+        <p id="email-error"></p>
+
+        <button type="submit" onclick="myFunction()">Send</button>
+    </form>
+
+    <p id="success-message"></p>
+</body>
+
+</html-->
